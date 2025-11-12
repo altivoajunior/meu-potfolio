@@ -37,6 +37,10 @@ header {
   display: flex;
   justify-content: flex-end;
   align-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
 }
 
 nav#menu ul {
@@ -209,9 +213,64 @@ color: #0077ff;
   font-size: 1.1em;
 }
 
+#projeto-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+#projeto-container .projeto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 5px solid #66bbff ;
+  transition: border-width 0.6s;  
+}
+
+#projeto-container .projeto:hover {
+  cursor: pointer;
+  border-left-width: 15px;
+  cursor:pointer;
+  border-color: #0077ff;
+}
+
+#projeto-container .foto {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 8px;
+
+}
+
+footer{
+  background-color: #0077ff;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+}
+
 @media screen and (min-width: 768px) {
   #skill-container {
     grid-template-columns: 1fr 1fr;
+  }
+
+  #projeto-container .projeto {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  #projeto-container .projeto-info {
+    max-width: 80%;
+  }
+
+  #projeto-container .foto {
+    aspect-ratio: 1/1;
+    max-width: 20%;
+    max-height: 200px;
   }
 }
 
